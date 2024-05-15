@@ -270,7 +270,8 @@ class SyncMap(Loggable):
             return output_fragments
         output_fragments = visit_children(self.fragments_tree)
         return gf.safe_unicode(
-            json.dumps({"fragments": output_fragments}, indent=1, sort_keys=True)
+            #json.dumps({"fragments": output_fragments}, indent=1, sort_keys=True)
+            json.dumps({"fragments": output_fragments}, indent=1, sort_keys=True, ensure_ascii=False)
         )
 
     def add_fragment(self, fragment, as_last=True):
